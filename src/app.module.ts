@@ -6,7 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { VilleSchema } from './schemas/villes';
 
 @Module({
-  imports: [HttpModule,MongooseModule.forRoot('mongodb://localhost/villes'),MongooseModule.forFeature([{name:'Ville',schema:VilleSchema}])],
+  imports: [HttpModule,MongooseModule.forRoot(process.env.MONGODB_URL||'mongodb://localhost/villes'),MongooseModule.forFeature([{name:'Ville',schema:VilleSchema}])],
   controllers: [AppController],
   providers: [AppService],
 })
