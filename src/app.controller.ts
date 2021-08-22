@@ -7,12 +7,10 @@ export class AppController {
 
   @Get('getData')
   getMyData() {
-    return this.appService.getData();
-  }
+    return this.appService.getData()}
   @Get('outre')
   getOutre(){
-    return this.appService.getOutre();
-
+    return this.appService.getOutre()
   }
   @Post('postData')
   postData(){
